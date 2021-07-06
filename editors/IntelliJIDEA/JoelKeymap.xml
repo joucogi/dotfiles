@@ -1,0 +1,55 @@
+<keymap version="1" name="joel Keymap" parent="Mac OS X 10.5+">
+  <action id="ActivateCommitToolWindow" />
+  <action id="ActivateDatabaseToolWindow">
+    <keyboard-shortcut first-keystroke="meta 4" />
+  </action>
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="meta 0" />
+  </action>
+  <action id="EditorToggleColumnMode">
+    <keyboard-shortcut first-keystroke="shift meta 8" />
+    <keyboard-shortcut first-keystroke="ctrl c" />
+  </action>
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="alt f7" />
+    <keyboard-shortcut first-keystroke="ctrl meta alt f" />
+  </action>
+  <action id="FindUsagesInFile">
+    <keyboard-shortcut first-keystroke="meta f7" />
+    <keyboard-shortcut first-keystroke="alt f" />
+  </action>
+  <action id="RenameElement">
+    <keyboard-shortcut first-keystroke="shift f6" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt r" />
+  </action>
+  <action id="Scala.ExpandImplicits">
+    <keyboard-shortcut first-keystroke="shift ctrl alt minus" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt subtract" />
+  </action>
+  <action id="Scala.ShowImplicits">
+    <keyboard-shortcut first-keystroke="shift ctrl alt equals" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt add" />
+  </action>
+  <action id="SelectInProjectView">
+    <keyboard-shortcut first-keystroke="ctrl meta alt l" />
+  </action>
+  <action id="ShowUsages">
+    <keyboard-shortcut first-keystroke="meta alt f7" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt f" />
+  </action>
+  <action id="SplitHorizontally">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt s" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="ctrl meta alt s" />
+  </action>
+  <action id="ToggleInlineHintsAction">
+    <keyboard-shortcut first-keystroke="ctrl meta alt p" />
+  </action>
+  <action id="Unsplit">
+    <keyboard-shortcut first-keystroke="ctrl meta alt u" />
+  </action>
+  <action id="UnsplitAll">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt u" />
+  </action>
+</keymap>

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "laravel/installer": "^3.2",
+        "hirak/prestissimo": "^0.3.10"
+    }
+}

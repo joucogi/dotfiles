@@ -1,0 +1,102 @@
+{:profiles
+ {:Default
+  {:alone              500
+   :default            true
+   :delay              200
+   :held               500
+   :sim                200
+   :simlayer-threshold 220}}
+
+:applications
+{;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
+  :Chrome ["com.google.Chrome", "com.google.Chrome.beta"]
+  :Finder ["com.apple.finder"]
+  :IntelliJ ["com.jetbrains.intellij"]
+  :Notion ["notion.id"]
+  :Slack ["com.tinyspeck.slackmacgap"]
+}
+:templates {
+  :paste "osascript -e '
+    set the clipboard to \"%s\"
+    tell application \"System Events\"
+        keystroke \"v\" using command down
+    end tell
+  '"
+  :open "open -a '%s.app'"
+}
+:simlayers {:open-mode {:key :o}
+            :emoji-mode {:key :e}}
+
+ :main
+ [;; ------------ Remaps ------------
+  ;;{:des   "[mouse] Up key -> Restore last hidden" :rules [[{:pkey :button5} :!Ctab]]}
+  ;;{:des   "[mouse] Down key -> Hide" :rules [[{:pkey :button4} [{:pkey :button1} :!Ch]]]}
+  {:des   "[mouse] Move to another desktop" :rules [
+    [{:pkey :button4} :!Tright_arrow]
+    [{:pkey :button5} :!Tleft_arrow]
+  ]}
+  ;;{:des   "[mouse] Move to next desktop" :rules [[{:pkey :button5} [:!Tright_arrow]]]}
+  {:des   "Caps Lock to Fn" :rules [[{:key :caps_lock} {:key :fn}]]}
+  {:des   "Fn + I/J/K/L to Arrow Keys" :rules [
+    [:!Fi {:key :up_arrow}]
+    [:!Fj {:key :left_arrow}]
+    [:!Fk {:key :down_arrow}]
+    [:!Fl {:key :right_arrow}]
+  ]}
+ ;; ------------ Launchers ------------
+  {:des "Open iTerm" :rules [[:!CTOspacebar [:open "iTerm"]]]}
+  {:des "Open Browser Chrome" :rules [[:!CTOb [:open "Google Chrome"]]]}
+  {:des "Open IntelliJ IDEA" :rules [[:!CTOi [:open "IntelliJ IDEA"]]]}
+  {:des "Open Visual Code" :rules [[:!CTOv [:open "Visual Studio Code"]]]}
+  {:des "Open Workspace" :rules [[:!CTOo [
+    [:open "iTerm"]
+    [:open "IntelliJ IDEA"]
+    [:open "Google Chrome"]
+    [:open "Skype"]
+    [:open "Microsoft Teams"]
+    [:open "Microsoft Outlook"]
+    ]]]}
+  {:des "Open mode"
+    :rules [:open-mode
+      [:t [:open "iTerm"]]
+      [:c [:open "Google Chrome"]]
+    ]}
+  {:des "Emoji mode"
+    :rules [:emoji-mode
+      [:v [:paste "✅"]]
+      [:t [:paste "👍"]]
+      [:d [:paste "👎"]]
+      [:l [:paste "😂"]]
+      [:f [:paste "🤦🏻‍♂️"]]
+      [:a [:paste "😡"]]
+      [:r [:paste "🚀"]]
+      [:g [:paste "😬"]]
+      [:p [:paste "➕"]]
+      [:s [:paste "😔"]]
+    ]}
+ ]
+
+
+ ;; ------------ Cheatsheet ------------
+ ;; !  stand for mandatory
+ ;; #  stand for optional
+ ;; !! stand for mandatory command + control + optional + shift (hyper)
+ ;; ## stand for optional any
+ ;; C T O S for left command control option shift
+ ;; Q W E R for right command control option shift
+ ;; F for fn
+ ;; need to prefix C T O S F Q W E R with ! or #
+
+ :cheatsheet
+ {:!Ca        "command a"
+  :!Ta        "control a"
+  :!Oa        "option a"
+  :!Sa        "shift a"
+  :#Sa        "shift a"
+  :!CTOa      "command control option a"
+  :!Cspacebar "command space"
+  :!Fa        "fn a"
+  :##a        "keycode a optional any"
+  :!!a        "mandatory hyper (control command option shift) a "
+  :template   {:des   "Description of your action"
+               :rules [[:!Cspacebar "command to execute"]]}}}

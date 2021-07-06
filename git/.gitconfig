@@ -1,0 +1,31 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Joel Coll Costa
+	email = joel.coll@gmail.com
+[core]
+        editor = vim
+	excludesfile = /Users/joelcollcosta/.gitignore_global
+	whitespace = cr-at-eol
+	autocrlf = input
+[merge]
+        tool = vimdiff
+[alias]
+ 	graph = log --graph --decorate --color --all --oneline
+        lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+        lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+        lg3 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset) - %C(white)%s%C(reset) %C(bold red)<%an>%C(reset)' --all
+        lg = !"git lg3"
+        send = push --tags origin master:master develop:develop
+        update = pull --tags origin
+        compare = fetch --tags origin
+        changes = show --name-only
+        files = ls-tree -r master --name-only
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = false

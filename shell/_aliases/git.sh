@@ -1,0 +1,8 @@
+alias gab="gb | grep '*' | cut -d ' ' -f 2"
+alias gupd="git update ${gab}"
+alias gsnd="git send"
+alias glg="git lg"
+alias gsh="git stash list"
+alias gshs="git stash save"
+alias gsha="git stash apply"
+alias gshd="git stash drop"
