@@ -43,6 +43,6 @@ export path=(
   "/bin"
   "/usr/bin"
   "/usr/sbin"
-  "/sbin",
+  "/sbin"
   "$HOME/.symfony/bin"
 )
