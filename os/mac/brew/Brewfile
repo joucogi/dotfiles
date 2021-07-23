@@ -37,8 +37,8 @@ brew "mockery"
 brew "navi"
 brew "node"
 brew "openjdk"
-brew "php"
-brew "php@7.4"
+brew "php", link: false
+brew "php@7.4", link: true
 brew "rabbitmq-c"
 brew "sbt"
 brew "tcl-tk"
@@ -51,6 +51,7 @@ brew "yqrashawn/goku/goku"
 cask "adoptopenjdk"
 cask "adoptopenjdk8"
 cask "karabiner-elements"
+cask "raycast"
 mas "Bitwarden", id: 1352778147
 mas "iHosts", id: 1102004240
 mas "Telegram", id: 747648890
