@@ -1,8 +1,7 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
-	name = Joel Coll Costa
+	name = Joel Coll
 	email = joel.coll@gmail.com
+	signingkey = 391838D9089417BF
 [core]
         editor = vim
 	excludesfile = /Users/joelcollcosta/.gitignore_global
@@ -28,4 +27,10 @@
 	process = git-lfs filter-process
 	required = true
 [pull]
-	rebase = false
+	rebase = true
+[commit]
+        gpgsing = true
+[tags]
+        gpgsign = true
+[gpg]
+	program = gpg
