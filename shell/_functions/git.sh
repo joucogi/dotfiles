@@ -62,3 +62,12 @@ function git_tag_exists() {
         echo true
     fi
 }
+
+function git_reset_soft() {
+    git reset --soft ${1}
+}
+
+
+function git_reset_hard() {
+    git reset --hard ${1}
+}

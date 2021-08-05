@@ -10,8 +10,9 @@ alias dotfiles='cd $DOTFILES_PATH'
 
 # Git
 alias gaa="git add -A"
-#alias gc='$DOTLY_PATH/bin/dot git commit'
-alias gc="git add -A && git commit"
+alias gc='$DOTLY_PATH/bin/dot git commit'
+alias gcs='$DOTLY_PATH/bin/dot git signedcommit'
+#alias gc="git add -A && git commit"
 alias gca="git add --all && git commit --amend --no-edit"
 alias gco="git checkout"
 alias gd='$DOTLY_PATH/bin/dot git pretty-diff'
