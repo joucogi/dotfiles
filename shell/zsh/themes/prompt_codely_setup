@@ -52,8 +52,22 @@ prompt_codely_precmd() {
 
 prompt_docker_containers() {
   total_docker_containers=$(docker ps -a | grep -v "IMAGE" | wc -l | bc)
-  if [ $total_docker_containers -gt 0 ]; then
-    print -n "%F{cyan} (${total_docker_containers} containers)"
+  total_docker_images_none=$(docker images | grep "<none>" | wc -l | bc)
+
+  if [ $total_docker_containers -gt 0 ] || [ $total_docker_images_none -gt 0 ]; then
+    total_running_docker_containers=$(docker ps | grep -v "IMAGE" | wc -l | bc)
+    total_excited_docker_container=$(($total_docker_containers - $total_running_docker_containers))
+    print -n "%F{cyan} (docker:"
+    if [ $total_running_docker_containers -gt 0 ]; then
+      print -n "%F{cyan} ${total_running_docker_containers} running"
+    fi
+    if [ $total_excited_docker_container -gt 0 ]; then
+      print -n "%F{red} ${total_excited_docker_container} excited"
+    fi
+    if [ $total_docker_images_none -gt 0 ]; then
+      print -n "%F{yellow} ${total_docker_images_none} deprecated"
+    fi
+    print -n "%F{cyan})"
   fi
 }
 
