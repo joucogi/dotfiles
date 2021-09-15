@@ -7,4 +7,4 @@
 # @raycast.icon 📂
 # @raycast.description Open the dotfiles with IntelliJ
 
-"$HOME/bin/idea" "$HOME/.dotfiles"
+/usr/local/bin/idea "$HOME/.dotfiles"
