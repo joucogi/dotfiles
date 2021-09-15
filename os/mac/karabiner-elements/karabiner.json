@@ -257,9 +257,6 @@
                                     },
                                     {
                                         "shell_command": "open -a 'Microsoft Teams.app'"
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Microsoft Outlook.app'"
                                     }
                                 ],
                                 "type": "basic"
